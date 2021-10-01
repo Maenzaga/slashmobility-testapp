@@ -3,6 +3,8 @@ import './App.sass';
 import { useCurrentLocation } from './hooks/useCurrentLocation';
 import { Loader } from '@googlemaps/js-api-loader';
 import { APIK } from './constants';
+import { UserCard } from './components/UserCard/UserCard';
+import { LocationCard } from './components/LocationCard/LocationCard';
 
 function App() {
   const position = useCurrentLocation();
@@ -42,14 +44,13 @@ function App() {
     <header className="header-section">
       <div className="header-section_text">Slash My Profile</div>
     </header>
-    <div className="card-container">
-      <div className="user-card">Hey</div>
-      <div className="location-card">Hey</div>
-    </div>
-    <div id="map" style={{width:window.innerWidth/2, height: 200, margin: 16}}></div>
-    <button onClick={showCurrentLocation} style={{marginLeft:16}}>
-      GET MY LOCATION
-    </button>
+    
+    <body>
+      <div className="cards-container">
+      <UserCard/>
+      <LocationCard locationClick={showCurrentLocation}/>
+      </div>
+    </body>
     </>
   );
 }
