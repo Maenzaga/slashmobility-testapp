@@ -9,6 +9,8 @@ import { LocationCard } from './components/LocationCard/LocationCard';
 function App() {
   const position = useCurrentLocation();
   const mapRef = useRef<google.maps.Map>()
+  const bannerImageName = require('./assets/header-background-vector-small.jpg')
+  const userImageName = require('./assets/persona.png')
 
   useEffect (() => {
     const loader = new Loader({
@@ -44,10 +46,10 @@ function App() {
     <header className="header-section">
       <div className="header-section_text">Slash My Profile</div>
     </header>
-    
+
     <body>
       <div className="cards-container">
-      <UserCard/>
+      <UserCard bannerImg={bannerImageName} userImg={userImageName}/>
       <LocationCard locationClick={showCurrentLocation}/>
       </div>
     </body>

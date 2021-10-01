@@ -1,4 +1,4 @@
-
+import './styles.sass'
 interface LocationCardProps {
     locationClick: ()=>void
 }
